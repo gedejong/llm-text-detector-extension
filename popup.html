@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>LLM Detector Settings</title>
+<style>
+  :root{
+    --accent:#0064d1;
+    --bg:#f8f9fa;
+    --border:#dde1e6;
+    --radius:6px;
+    font-family:system-ui,sans-serif;
+    font-size:14px;
+  }
+  body{margin:0;padding:16px;background:var(--bg);min-width:260px;}
+  h1{font-size:1rem;margin:.2rem 0 1rem}
+  label{display:flex;align-items:center;gap:8px;margin:.5rem 0;}
+  input[type=number]{width:80px;padding:2px 4px}
+  textarea{width:100%;padding:4px 6px;border:1px solid var(--border);border-radius:var(--radius)}
+  button.save{
+    width:100%;margin-top:12px;padding:6px;border:none;
+    background:var(--accent);color:#fff;border-radius:var(--radius);cursor:pointer
+  }
+  .small{font-size:.83em;color:#555;margin-top:4px}
+  hr{border:none;border-top:1px solid var(--border);margin:12px 0}
+</style>
+</head>
+<body>
+  <h1>LLM Detector</h1>
+
+  <label>
+    <input type="checkbox" id="globalToggle">
+    Enable detection globally
+  </label>
+
+  <hr>
+
+  <div id="siteSection">
+    <div><strong id="domainLabel"></strong></div>
+
+    <label>
+      <input type="checkbox" id="ignoreSite">
+      Exclude this site
+    </label>
+
+    <label>
+      Threshold (%) <input type="number" id="thr" min="0" max="100" step="0.1">
+    </label>
+
+    <label class="small">Exclude selectors (comma‑sep)</label>
+    <textarea rows="3" id="sel"></textarea>
+
+    <button class="save" id="saveBtn">Save</button>
+  </div>
+
+  <div id="disabledMsg" style="display:none;margin-top:8px;color:#a00">
+    Detection is globally disabled.
+  </div>
+
+<script src="popup.js"></script>
+</body>
+</html>
