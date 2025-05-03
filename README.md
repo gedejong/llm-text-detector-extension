@@ -10,7 +10,11 @@ A browser extension that highlights possibly LLM-generated content based on a hi
 - Per-site config and detection threshold
 - User override settings
 
+### **Support this project**  
+If this tool saves you time or makes you smile, you can [buy me a coffee](https://www.buymeacoffee.com/gedejong). 
+
 ### License
 
 This project is licensed under the [GNU GPL v3.0](LICENSE).
+
 
