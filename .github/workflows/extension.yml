@@ -1,0 +1,34 @@
+name: Build and Validate Chrome Extension
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Validate manifest.json
+        run: |
+          jq . manifest.json > /dev/null
+
+      - name: Check for syntax errors
+        run: |
+          find . -name "*.js" -exec node --check {} \;
+
+      - name: Create distributable zip
+        run: |
+          mkdir dist
+          zip -r dist/llm-detector.zip . -x "*.git*" -x "dist/*" -x "*.DS_Store"
+
+      - name: Upload ZIP artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: llm-detector-extension
+          path: dist/llm-detector.zip
+
