@@ -6,6 +6,9 @@
       ".update-components-actor"
     ]
   },
+  "openai.com": {
+    "threshold": 0.2
+  },
   "news.ycombinator.com": {
     "threshold": 0.4,
     "excludeSelectors": [
