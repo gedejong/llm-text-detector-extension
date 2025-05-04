@@ -54,4 +54,3 @@ jobs:
           refresh_token: ${{ secrets.CHROME_REFRESH_TOKEN }}
           extension_id: ${{ secrets.CHROME_EXTENSION_ID }}
           zip: dist/llm-detector.zip
-

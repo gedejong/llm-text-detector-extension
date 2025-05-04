@@ -1,24 +1,17 @@
 {
   "linkedin.com": {
     "threshold": 0.2,
-    "excludeSelectors": [
-      ".feed-shared-actor__meta",
-      ".update-components-actor"
-    ]
+    "excludeSelectors": [".feed-shared-actor__meta", ".update-components-actor"]
   },
   "openai.com": {
     "threshold": 0.2
   },
   "news.ycombinator.com": {
     "threshold": 0.4,
-    "excludeSelectors": [
-      ".subtext",
-      ".comhead"
-    ]
+    "excludeSelectors": [".subtext", ".comhead"]
   },
   "default": {
     "threshold": 0.2,
     "excludeSelectors": []
   }
 }
-
